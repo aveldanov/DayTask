@@ -23,35 +23,45 @@
 </head>
 
 <body>
+  <div class="container">
 
 
-<nav>
-  <div class="nav-wrapper">
-    <a href="brand-logo">Web Zone</a>
-      <ul class="right hide-on-med-and-down"> 
-        <li>Home</li>
-        <li>Video</li>
-        <li>Service</li>
-        <li>About</li>
-        <li>Contact</li>
 
-      </ul>
 
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="input_text" type="text" data-length="10">
+                <label for="input_text">Input text</label>
+                <input type="submit" value="Save" class="btn" id="btnSave">
+
+              </div>
+          </div>
+        </div>
+      </form>
+    </div>
 
   </div>
 
 
-</nav>
-  
-  
-
-  
-  
-  
-
-        
+<style>
+  .btn{
+    float: right;
+    position: relative;
+    bottom: 50px;
+  }
+</style>
 
 
+
+
+  <script>
+    $(document).ready(function () {
+      $('input#input_text, textarea#textarea2').characterCounter();
+    });
+
+  </script>
 
 
 
