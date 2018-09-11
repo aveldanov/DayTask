@@ -6,14 +6,32 @@
         <i class="material-icons">menu</i>
       </a>
 
+
+
       <!-- RIGHT NAV -->
       <ul class="right hide-on-med-and-down">
         {{#if user}}
 
         <li>
-          <a href="/team">Welcome
-            <b>{{user.firstName}}</b>
+          <a href="#!"></a>Welcome
+          <b>{{user.firstName}}</b>
           </a>
+        </li>
+        <li>
+          <a href="/">
+            <i class="fas fa-home" style="font-size:18px"></i> Home </a>
+        </li>
+        <li>
+          <a href="/tasks">
+            <i class="fas fa-tasks" style="font-size:18px"></i> My Tasks </a>
+        </li>
+        <li>
+          <a href="/team">
+            <i class="fas fa-users" style="font-size:18px"></i> Team </a>
+        </li>
+        <li>
+          <a href="/settings">
+            <i class="fas fa-cog" style="font-size:18px"></i>Settings </a>
         </li>
         <li>
           <a href="/auth/logout">
@@ -29,8 +47,8 @@
       <!-- SIDE MENU -->
       <ul class="sidenav grey lighten-2" id="main-menu">
         {{#if user}}
-        <li class="disabled">
-          <a href="/tasks">
+        <li>
+          <a href="/">
             <i class="fas fa-home" style="font-size:18px"></i> Home </a>
         </li>
         <li>
@@ -59,16 +77,8 @@
           <a href="/auth/google">
             <i class="fas fa-sign-in-alt" style="font-size:18px"></i> Login </a>
         </li>
-
-
         {{/if}}
-
-
-
-
       </ul>
-
-
     </div>
   </div>
 </nav>
