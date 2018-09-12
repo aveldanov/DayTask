@@ -1,21 +1,57 @@
 <div class="container">
   <form action="/tasks" method="POST" class="col s12">
-    <div class="collection">
-        {{#each tasks}}
-<a href="#!" class="collection-item">
+{{!--     <div class="collection">
+      {{#each tasks}}
+      <a href="#!" class="collection-item">
         <span class="new badge red">4</span>{{body}}</a>
-        {{else}}
+      {{else}}
       <p>no tasks added yet</p>
 
-        {{/each}}
+      {{/each}}
+    </div> --}}
 
 
-{{!--       <a href="#!" class="collection-item">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h6>{{user.firstName}} {{user.lastName}}</h6>
+        </li>
+      {{#each tasks}}
+        <li class="collection-item">
+          <div>{{body}}
+
+            <a href="#!" class="secondary-content">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+
+            <a href="#!" class="secondary-content">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+
+          </div>
+        </li>
+      {{else}}
+      <p>no tasks added yet</p>
+
+      {{/each}}
+
+
+
+
+
+
+      </ul>
+
+
+
+
+
+
+      {{!--
+      <a href="#!" class="collection-item">
         <span class="new badge red">4</span>Task1</a>
       <a href="#!" class="collection-item">Alan</a>
       <a href="#!" class="collection-item">
         <span class="new badge green darken-3" data-badge-caption="days">14</span>Item</a> --}}
-    </div>
     <!-- add a task -->
     <div class="row">
       {{!--
@@ -30,7 +66,8 @@
     </div>
 
 
-{{!--     <div class="row">
+    {{!--
+    <div class="row">
 
       {{#each tasks}}
       <div class="col s12">

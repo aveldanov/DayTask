@@ -11,6 +11,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
   Task.find({
 
   })
+  .populate('user')
   .then(tasks =>{
     res.render('index/team',{
       tasks:tasks

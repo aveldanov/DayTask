@@ -16,6 +16,9 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
@@ -23,96 +26,71 @@
 </head>
 
 <body>
+
+
+
+
+
   <div class="container">
 
+    <div class="collection">
 
 
-      <table>
-          <thead>
-            <tr>
-                <th>Name</th>
-                <th>Item Name</th>
-                <th>Item Price</th>
-            </tr>
-          </thead>
-  
-          <tbody class="collection">
-              <a href="#!" class="collection-item"><span class="badge">1</span> <tr class="collection-item">
-              <td>Alvin</td></a>
-              <td>Eclair</td>
-              <td>$0.87</td>
-            </tr></a>
-            <tr>
-              <td>Alan</td>
-              <td>Jellybean</td>
-              <td>$3.76</td>
-            </tr>
-            <tr>
-              <td>Jonathan</td>
-              <td>Lollipop</td>
-              <td>$7.00</td>
-            </tr>
-          </tbody>
-        </table>
 
-
-<div class="container">
-        <div class="collection">
-          <table>
-              <tr>
-              <td>
-feferffe
-              </td>
-              
-                  <a href="#!" class="collection-item"><td><span class="badge">1</span>alan</a></td>
-                
-                </tr>
-          </table>
-
-
-            <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
-            <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
-            <a href="#!" class="collection-item">Alan</a>
-            <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
-          </div>
-
-        </div>
+      <a href="#!" class="collection-item">
+        <span class="new badge">4</span>Alan</a>
 
 
 
 
-<br>
-        <tr>
-            <td><a href="/stories/show/{{id}}">{{title}}</a></td>
-            <td>{{formatDate date 'MMMM do, YYYY'}}</td>
-            <td><span class="dash-status">{{status}}</span></td>
-            <td><a class="btn left-align" href="/stories/edit/{{id}}"><i class="fa fa-pencil"></i> Edit</a>
-            <form action="/stories/{{id}}?_method=DELETE" id="delete-form" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit" class="btn red"><i class="fa fa-remove"></i> Delete</button>
-            </form>
-      
-            </td>
-      
-          </tr>
+      <a href="#!" class="collection-item">Alan</a>
 
 
 
-
-
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="input_text" type="text" data-length="10">
-                <label for="input_text">Input text</label>
-                <input type="submit" value="Save" class="btn" id="btnSave">
-
-              </div>
-          </div>
-        </div>
-      </form>
+      <a href="#!" class="collection-item">
+        <span class="badge">14</span>Alan</a>
     </div>
+
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h4>First Names</h4>
+      </li>
+      <li class="collection-item">
+        <div>Alvin
+
+            <a href="#!" class="secondary-content col s12">
+            
+                <i class="material-icons col s12">delete</i>
+              </a>
+
+          <a href="#!" class="secondary-content col s12">
+            <i class="material-icons col s12">edit</i>
+          </a>
+
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>Alvin
+          <a href="#!" class="secondary-content">
+            <i class="material-icons">send</i>
+          </a>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>Alvin
+          <a href="#!" class="secondary-content">
+            <i class="material-icons">send</i>
+          </a>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>Alvin
+          <a href="#!" class="secondary-content">
+            <i class="material-icons">send</i>
+          </a>
+        </div>
+      </li>
+    </ul>
 
   </div>
 
@@ -123,13 +101,16 @@ feferffe
 
 
 
-<style>
-  .btn{
-    float: right;
-    position: relative;
-    bottom: 50px;
-  }
-</style>
+  <style>
+    .btn {
+      float: right;
+      position: relative;
+      bottom: 50px;
+    }
+    i{
+      margin-left: 20px ;
+    }
+  </style>
 
 
 

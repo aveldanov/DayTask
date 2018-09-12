@@ -29,6 +29,15 @@ footer{
   margin-top:20px;
 }
 
+.secondary-content{
+  margin-left:20px;
+}
+
+.edit-btn{
+  float: right;
+  bottom: 38px;
+}
+
 /* .btn-small{
   position: relative;
   bottom: 50px;

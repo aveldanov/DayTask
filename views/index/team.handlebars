@@ -1,19 +1,31 @@
-<h4>tasks listed by the team</h4>
-
 <div class="row">
   <div class="col s12 m6">
-    <div class="card green darken-3">
-      <div class="card-content white-text">
-        <p class="center-align">{{user.firstName}} {{user.lastName}}</p>
-        <div class="collection">
-          {{#each tasks}}
-          <a href="#!" class="collection-item">
-        <span class="new badge red">4</span>{{body}}</a>
+    <div class="card">
+          
+
+
+      <ul class="collection with-header">
+
+        <li class="collection-header green lighten-4">
+          <div class="chip center-align">
+            <img src="{{user.image}}"> {{user.firstName}} {{user.lastName}}
+          </div>
+<div class="">
+            <a href="/tasks" class="btn-floating btn-small  waves-effect waves-light teal edit-btn">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+          </div>
+        </li>
+        {{#each tasks}}
+        <li class="collection-item">
+          <div>
+            {{body}}
+          </div>
+        </li>
         {{else}}
-        <p>no tasks added</p>
+        <p>no tasks added yet</p>
+
         {{/each}}
-        </div>
-      </div>
     </div>
   </div>
 
