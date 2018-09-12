@@ -29,6 +29,9 @@ const team = require('./routes/team');
 
 const keys = require('./config/keys');
 
+// Handlebars Helpers
+const {formatDate} = require('./helpers/hbs');
+
 //Map global promises
 mongoose.Promise = global.Promise;
 
@@ -49,6 +52,9 @@ app.use(bodyParser.json());
 //Handlebars - Middleware
 
 app.engine('handlebars', exphbs({
+  helpers: {
+    formatDate: formatDate
+  },
   defaultLayout:'main'
 }))
 app.set('view engine', 'handlebars');

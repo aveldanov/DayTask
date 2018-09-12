@@ -38,6 +38,9 @@ footer{
   bottom: 38px;
 }
 
+.date{
+font-size: 8px;
+}
 /* .btn-small{
   position: relative;
   bottom: 50px;
