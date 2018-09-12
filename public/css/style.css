@@ -29,11 +29,12 @@ footer{
   margin-top:20px;
 }
 
-.btn-small{
-  float: right;
+/* .btn-small{
   position: relative;
   bottom: 50px;
-}
+  float: right;
+  left:100px;
+} */
 
 
 

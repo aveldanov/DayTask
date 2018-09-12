@@ -5,10 +5,12 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
+const bodyParser= require('body-parser');
 
 
 //Load user model - should be above PASSPORT
 require('./models/User');
+require('./models/Task');
 
 
 //Passport config
@@ -39,6 +41,10 @@ mongoose.connect(keys.mongoURI, {
 
 
 const app = express();
+
+//Body Parser Middleware to deal with POST Method
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Handlebars - Middleware
 
