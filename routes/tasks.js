@@ -12,7 +12,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
     user: req.user.id
   })
     .then(tasks => {
-      console.log(tasks);
+      //console.log(tasks);
       res.render('index/tasks', {
         tasks: tasks
       });
@@ -23,40 +23,36 @@ router.get('/', ensureAuthenticated, (req, res) => {
 
 //Process a task
 router.post('/add', (req, res) => {
-  //res.send('POSTED');
-  /* console.log(req.body);
-  res.send('posted'); */
-
-  const newTask = {
+ /*  const newTask = {
     body: req.body.body,
     user: req.user.id
-  }
+  } */
 
 
-    new Task(newTask)
-      .save()
-      .then(task => {
-        res.redirect('/tasks');
-      });
-
-
-
-  //Delete Story
-
-  router.delete('/:id', (req, res) => {
-    res.send('delete');
-    console.log(req.params.id);
-    /*Task.remove({_id:req.params.id})
-    .then(()=>{
+  new Task(newTask)
+    .save()
+    .then(task => {
       res.redirect('/tasks');
-    }) */
-
-  });
-
-
-
+    });
 
 });
+
+//Delete Story
+
+router.delete('/:id', (req, res) => {
+  //res.send('delete');
+  //console.log(req.params.id);
+  Task.deleteOne({ _id: req.params.id })
+    .then(() => {
+      res.redirect('/tasks');
+    })
+
+});
+
+
+
+
+
 
 
 
