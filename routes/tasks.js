@@ -16,17 +16,15 @@ router.get('/', ensureAuthenticated, (req, res) => {
       res.render('index/tasks', {
         tasks: tasks
       });
-
     });
-
 });
 
 //Process a task
 router.post('/add', (req, res) => {
- /*  const newTask = {
+  const newTask = {
     body: req.body.body,
     user: req.user.id
-  } */
+  }
 
 
   new Task(newTask)
