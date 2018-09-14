@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
+  <script src="handlebars-v4.0.12.js"></script>
+</head>
+
+<body>
+
+
+  <div id="contentDiv"></div>
+
+  <script id="the-template" type="text/x-handlebars-template">
+     
+  <div>
+
+ 
+    {{#each tasks}}
+    <p>
+      
+      {{user}} {{body}}
+
+    </p>
+
+
+    {{/each}}
+
+  </div>
+
+
+    </script>
+
+  <script type="text/javascript">
+
+    // Assign the template name
+    var templateInfo = document.getElementById("the-template").innerHTML;
+
+    // Compile the template
+    var template = Handlebars.compile(templateInfo);
+
+
+    var templateData = template({
+
+  tasks:[{
+    body: ["atask1", "NDWED"],
+    user: "anton"},
+  { 
+    body: "ptask2",
+    user: "peter"},
+  { 
+    body: "atask3",
+    user: "anton"}] 
+      
+    });
+
+    document.getElementById('contentDiv').innerHTML += templateData;
+
+
+  </script>
+
+
+
+</body>
+
+</html>

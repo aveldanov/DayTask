@@ -1,24 +1,27 @@
 <div class="container">
 
   <form action="/tasks" method="POST" class="col s12">
-{{!--     <div class="collection">
-      {{#each tasks}}
-      <a href="#!" class="collection-item">
-        <span class="new badge red">4</span>{{body}}</a>
-      {{else}}
-      <p>no tasks added yet</p>
-
-      {{/each}}
-    </div> --}}
-
 
       <ul class="collection with-header">
         <li class="collection-header">
-          <h6>{{user.firstName}} {{user.lastName}}</h6>
+          <h5>{{user.firstName}} {{user.lastName}}</h5>
+ {{!--          <p>{{tasks}}</p>
+        {{#each tasks}}
+
+        {{#each body}}
+          <p>{{.}}</p>
+          {{/each}}
+        {{/each}} --}}
+
         </li>
-      {{#each tasks}}
-        <li class="collection-item">
-          <div>{{body}} 
+{{!--       {{#each tasks}}
+
+ --}}      {{#each tasks}}  
+             {{#each body}}
+
+ <li class="collection-item">
+          <div>
+            {{.}}
             
             
             
@@ -39,10 +42,13 @@
 
 
           </div>
+
+
         </li>
       {{else}}
       <p>no tasks added yet</p>
 
+      {{/each}}
       {{/each}}
 
 

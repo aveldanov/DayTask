@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .redText {
+      color: red;
+    }
+
+    .blueText {
+      color: blue;
+    }
+
+    .greenText {
+      color: green;
+    }
+  </style>
+
+
+  <script src="handlebars-v4.0.12.js"></script>
+</head>
+
+<body>
+  <div id="quoteData">
+
+  </div>
+  <script id="quote-template" type="text/x-handlebars-template">
+    <h3>Favorite {{name}}Quotes</h3>
+
+    <ol>
+      {{#each quotes}}
+      <li>{{quote}}
+      </li>
+      {{/each}}
+
+    </ol>
+
+    {{{yogiBio}}}
+    <br>
+    {{makeLink "Yogi Berra Museum" "http://google.com"}}
+
+<br>
+    {{changeColor "Make my text red" color="yellow"}}
+<br>
+
+{{sayHello}}
+    </script>
+
+  <script type="text/javascript">
+
+    var quoteInfo = document.getElementById('quote-template').innerHTML;
+
+    var template = Handlebars.compile(quoteInfo);
+
+
+
+    //link clear up helper passes two params
+    Handlebars.registerHelper('makeLink', (text, url) => {
+      text = Handlebars.Utils.escapeExpression(text);
+      url = Handlebars.Utils.escapeExpression(url);
+      var theLink = '<a href="' + url + '">' + text + "</a>";
+      return new Handlebars.SafeString(theLink);
+    });
+
+    //change color helper
+
+    Handlebars.registerHelper("changeColor", (text, options) => {
+      text = Handlebars.Utils.escapeExpression(text);
+      if (options.hash.color === "red") {
+        return new Handlebars.SafeString("<span class='redText'>" + text + "</span>");
+      } else if (options.hash.color === "blue") {
+        return new Handlebars.SafeString("<span class='blueText'>" + text + "</span>");
+      } else {
+        return new Handlebars.SafeString("<span class='greenText'>" + text + "</span>");
+
+      }
+    })
+
+    Handlebars.registerHelper("sayHello", (options) => {
+      switch (options.data.lang) {
+        case "spanish":
+          return "Hola";
+          break;
+        case "French":
+          return "Hola";
+          break;
+        case "Russian":
+          return "Privet";
+          break;
+        default:
+          return "Hello";
+      }
+    });
+
+    var quoteData = template(
+      {
+        name: "anton",
+        quotes: [
+          { quote: "quote1" },
+          { quote: "quote2" }
+        ],
+        yogiBio: "<i> wduch </i>"
+
+
+      },
+      {
+        data: {
+          lang: "spanish"
+        }
+      }
+
+    );
+
+
+
+
+
+    document.getElementById("quoteData").innerHTML += quoteData;
+
+  </script>
+
+
+
+</body>
+
+</html>

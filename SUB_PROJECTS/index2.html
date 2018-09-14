@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="handlebars-v4.0.12.js"></script>
+</head>
+<body>
+<div id="derekData">
+
+</div>
+  <script type="text/javascript">
+    
+    var myInfo="<p> My name is {{name}} and I live at {{street}} street"
+    var template = Handlebars.compile(myInfo);
+
+    var data = template({
+      name:'Anton',
+      street:'123 Main str'
+    });
+
+    //console.log(data);
+
+    document.getElementById("derekData").innerHTML +=data;
+    
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+
+
+
+  
+
+var newTodos = [{
+    title: "u1_task1",
+    user: "user1"},
+  { 
+    title: "u2_task1",
+    user: "user2"},
+  { 
+    title: "u1_task2",
+    user: "user1"}] 
+
+//End result
+newTodos2 = [ 
+  {user:"user1"},
+  {title:["u1_task1","u2_task2"]} ,
+
+  {user:"user2"},
+  {title:["u2_task1"]} 
+];
+
+
+
+
+console.log(newTodos2);
+
+
+
+
+
+
+
+
+ /*    const index = newTodos.findIndex(function(todo, index){
+      console.log(todo);
+      return todo.title === "u2_task1"
+    });
+      
+  console.log(index);
+ */
+
+//Method 1
+/* const findTodo = function(myTodos, title){
+  const index = myTodos.findIndex(function(todo, index){
+    return todo.title.toLowerCase() === title.toLowerCase();
+  })
+  return myTodos[index];
+}
+
+let printMe = findTodo(newTodos,'u2_task1');
+  console.log(printMe);
+ */
+
+
+
+
+</script>
+
+
+</body>
+</html>

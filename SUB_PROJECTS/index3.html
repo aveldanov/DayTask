@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="handlebars-v4.0.12.js"></script>
+</head>
+
+<body>
+  <div id="quoteData">
+
+  </div>
+  <script id="quote-template" type="text/x-handlebars-template">
+    <h3>Favorite {{name}}Quotes</h3>
+
+    <ol>
+      {{#each quotes}}
+      <li>{{quote}}
+      </li>
+      {{/each}}
+
+    </ol>
+    </script>
+
+<script type="text/javascript">
+
+  var quoteInfo = document.getElementById('quote-template').innerHTML;
+
+  var template = Handlebars.compile(quoteInfo);
+
+  var quoteData = template({
+    name:"anton", 
+    quotes:[
+      {quote:"quote1"},
+      {quote:"quote2"}
+    ],
+    
+    
+  });
+
+  document.getElementById("quoteData").innerHTML +=quoteData;
+
+</script>
+
+
+
+</body>
+
+</html>

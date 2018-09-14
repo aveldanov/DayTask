@@ -8,6 +8,7 @@ const path = require('path');
 const bodyParser= require('body-parser');
 
 
+
 //Load user model - should be above PASSPORT
 require('./models/User');
 require('./models/Task');
@@ -23,6 +24,7 @@ const auth = require('./routes/auth');
 const index = require('./routes/index');
 const tasks = require('./routes/tasks');
 const team = require('./routes/team');
+
 
 
 //Load Keys file route
@@ -53,10 +55,10 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', exphbs({
   helpers: {
-    formatDate: formatDate
+    formatDate: formatDate,
   },
   defaultLayout:'main'
-}))
+}));
 app.set('view engine', 'handlebars');
 
 
@@ -89,7 +91,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auth', auth);
 app.use('/', index);
 app.use('/tasks', tasks);
-
 app.use('/team', team);
 
 
