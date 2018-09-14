@@ -1,33 +1,19 @@
 <div class="row">
-{{!-- {{#each tasks}}
-<br>
-<p>{{user.firstName}} {{user.lastName}}</p> 
-{{#each body}}
-<p>
-{{.}}
-</p>
-{{/each}}
 
+
+{{!-- 
+{{#group tasks by="user"}}
+    <h1>{{ value.firstName }}</h1>
  
-{{/each}} --}}
+    {{#each items}}
+        <p>{{ body }}</p>
+ 
+    {{/each}}
+{{/group}} --}}
 
 
+{{#group tasks by="user"}}
 
-
-  {{!-- <div class="col s12 m6">
-    <div class="card">
-      <ul class="collection with-header">
-        <li class="collection-header green lighten-4">
-          <div class="chip center-align">
-            <img src=""> 
-          </div>
-    </div>
-  </div> --}}
-
-
-
-
-{{#each tasks}}
 
   <div class="col s12 m6">
     <div class="card">
@@ -35,7 +21,7 @@
 
         <li class="collection-header green lighten-4">
           <div class="chip center-align">
-            <img src="{{user.image}}"> {{user.firstName}} {{user.lastName}}
+            <img src="{{value.image}}"> {{value.firstName}} {{value.lastName}}
           </div>
           <div class="">
             <a href="/tasks" class="btn-floating btn-small  waves-effect waves-light teal edit-btn">
@@ -43,10 +29,10 @@
             </a>
           </div>
         </li>
-        {{#each body}}
+        {{#each items}}
         <li class="collection-item">
           <div>
-            {{.}}{{user.id}}
+            {{body}}
           </div>
         </li>
         {{else}}
@@ -57,8 +43,7 @@
   </div>
  
 
-{{/each}}
-
+{{/group}}
 
 
 

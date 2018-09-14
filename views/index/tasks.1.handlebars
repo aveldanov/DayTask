@@ -1,0 +1,100 @@
+<div class="container">
+
+  <form action="/tasks" method="POST" class="col s12">
+
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h5>{{user.firstName}} {{user.lastName}}</h5>
+        {{!--
+        <p>{{tasks}}</p>
+        {{#each tasks}} {{#each body}}
+        <p>{{.}}</p>
+        {{/each}} {{/each}} --}}
+
+      </li>
+      {{!-- {{#each tasks}} --}} {{#each tasks}} {{#each body}}
+
+      <li class="collection-item">
+        <div>
+          {{.}}
+
+
+          <form method="POST" action="/tasks?_method=Delete" type="hidden">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit"><a href="/tasks" class="secondary-content">
+              <i class="fas fa-trash-alt"></i>
+            </a></button>
+          </form>
+          <a href="/tasks/{{task.id}}" class="secondary-content">
+            <i class="fas fa-pencil-alt"></i>
+          </a>
+          <a href="/tasks/{{task.id}}" class="secondary-content">
+          </a>
+          <br>
+
+          <snap class="date"> {{formatDate date 'minute'}}</snap>
+          {{!--
+          <snap class="date">
+            {{formatDate date 'hour'}}</snap> --}}
+
+
+        </div>
+
+
+      </li>
+      {{else}}
+      <p>no tasks added yet</p>
+
+      {{/each}} {{/each}}
+
+
+
+
+
+
+    </ul>
+
+
+
+
+
+
+    {{!--
+    <a href="#!" class="collection-item">
+      <span class="new badge red">4</span>Task1</a>
+    <a href="#!" class="collection-item">Alan</a>
+    <a href="#!" class="collection-item">
+      <span class="new badge green darken-3" data-badge-caption="days">14</span>Item</a> --}}
+    <!-- add a task -->
+    <div class="row">
+      {{!--
+      <form action="/tasks" method="POST" class="col s12"> --}}
+        <div class="input-field col s6">
+          <input id="input_text" type="text" data-length="20" name="body">
+          <label for="input_text">Input text</label>
+          <input type="submit" value="Save" onclick="M.toast({html: 'I am a toast'})" class="btn-small">
+        </div>
+
+      </form>
+    </div>
+
+
+    {{!--
+    <div class="row">
+
+      {{#each tasks}}
+      <div class="col s12">
+        <div class="collection">
+          <a href="#!" class="collection-item">
+            <span class="new badge red">4</span>{{body}}</a>
+        </div>
+      </div>
+
+      {{else}}
+      <p>no tasks added yet</p>
+      {{/each}}
+    </div> --}}
+
+
+
+</div>

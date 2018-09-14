@@ -6,7 +6,10 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const bodyParser= require('body-parser');
-
+const methodOverride = require('method-override');
+//NEW 
+var handlebars = require('handlebars'),
+    groupBy = require('handlebars-group-by'); 
 
 
 //Load user model - should be above PASSPORT
@@ -33,6 +36,10 @@ const keys = require('./config/keys');
 
 // Handlebars Helpers
 const {formatDate} = require('./helpers/hbs');
+const exhb = exphbs.create({extname:'hbs'});
+groupBy.register(exhb.handlebars,{});
+
+
 
 //Map global promises
 mongoose.Promise = global.Promise;
@@ -51,6 +58,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//middleware method override for put and delete requests
+
+app.use(methodOverride('_method'));
+
+
 //Handlebars - Middleware
 
 app.engine('handlebars', exphbs({
@@ -60,6 +72,10 @@ app.engine('handlebars', exphbs({
   defaultLayout:'main'
 }));
 app.set('view engine', 'handlebars');
+app.set('html', 'exhb.engine');
+
+
+
 
 
 //Use routes (anything that goes to /auth -> goes to auth route)
