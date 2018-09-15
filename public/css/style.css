@@ -7,6 +7,12 @@ body {
   flex-direction: column;
   background-color:#e8f5e9;
   font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+
+}
+form{
+  margin: 0px;
 }
 
 main {
@@ -48,5 +54,10 @@ font-size: 8px;
   left:100px;
 } */
 
-
+#form-item{
+  display: inline;
+  background-color: red;
+  padding: 0;
+  margin: 0;
+}
 

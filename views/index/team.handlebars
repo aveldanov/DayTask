@@ -14,7 +14,6 @@
 
 {{#group tasks by="user"}}
 
-
   <div class="col s12 m6">
     <div class="card">
       <ul class="collection with-header">
@@ -24,9 +23,13 @@
             <img src="{{value.image}}"> {{value.firstName}} {{value.lastName}}
           </div>
           <div class="">
-            <a href="/tasks" class="btn-floating btn-small  waves-effect waves-light teal edit-btn">
+            {{#if value}}
+              {{{editIcon value.id ../user.id}}}
+
+            {{/if}}
+            {{!-- <a href="/tasks" class="btn-floating btn-small  waves-effect waves-light teal edit-btn">
               <i class="fas fa-pencil-alt"></i>
-            </a>
+            </a> --}}
           </div>
         </li>
         {{#each items}}

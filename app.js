@@ -35,7 +35,8 @@ const team = require('./routes/team');
 const keys = require('./config/keys');
 
 // Handlebars Helpers
-const {formatDate} = require('./helpers/hbs');
+const {formatDate,
+editIcon} = require('./helpers/hbs');
 const exhb = exphbs.create({extname:'hbs'});
 groupBy.register(exhb.handlebars,{});
 
@@ -68,6 +69,7 @@ app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({
   helpers: {
     formatDate: formatDate,
+    editIcon:editIcon
   },
   defaultLayout:'main'
 }));

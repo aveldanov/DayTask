@@ -9,11 +9,11 @@
 
       </li>
       {{#each tasks}}
-      <li class="collection-item">
-        <div>
+      <li class="collection-item" >
+        <div >
           {{body}}
 
-          <form action="/tasks/{{id}}?_method=DELETE" method="POST" class="s12">
+          <form action="/tasks/{{id}}?_method=DELETE" method="POST" class="s12" id="form-item">
             <input type="hidden" name="_method" value="DELETE">
             <a href="#" class="secondary-content" onclick="$(this).closest('form').submit()">
               <i class="fas fa-trash-alt"></i>
@@ -49,9 +49,7 @@
   <form action="/tasks/add" method="POST" class="col s12">
     
     <div class="row">
-    
-      
-        <div class="input-field col s6">
+      <div class="input-field col s6">
           <input id="input_text" type="text" data-length="20" name="body">
           <label for="input_text">Input text</label>
           <input type="submit" value="Save" onclick="M.toast({html: 'I am a toast'})" class="btn-small">

@@ -15,6 +15,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
   Task.find({
   })
   .populate('user')
+  .sort({date:'desc'})
   .then(tasks =>{
     res.render('index/team',{
       tasks:tasks
