@@ -61,3 +61,8 @@ font-size: 8px;
   margin: 0;
 }
 
+#isDisabled{
+  cursor: not-allowed;
+  pointer-events: none;
+  color: darkgray;
+}
